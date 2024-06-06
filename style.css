@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+#header {
+  height: 73px;
+  width: 100%;
+  background-color: #be3144;
+  position: sticky;
+  top: 0px;
+}
+.p1 {
+  text-align: right;
+  padding-top: 18px;
+  padding-right: 8px;
+}
+.txt {
+  color: white;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 29px;
+  padding-left: 8px;
+  padding-right: 8px;
+  /* padding-right: 45px; */
+  margin-right: 35px;
+  font-family: "Poppins", sans-serif;
+}
+.txt:hover {
+  background-color: #45567d;
+}
+.main {
+  height: 690px;
+  width: 100%;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+.txt2 {
+  color: white;
+  font-size: 57px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  padding-left: 490px;
+  padding-top: 250px;
+}
+.txt3 {
+  color: #be3144;
+  font-size: 35px;
+  font-style: italic;
+  padding-left: 645px;
+  padding-top: 15px;
+}
+.main2 {
+  height: 1100px;
+  width: 100%;
+  background-color: #45567d;
+}
+
+.main3 {
+  display: flex;
+  height: 700px;
+  width: 100%;
+  background-color: #3a3d41;
+  font-size: 32px;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  column-gap: 30px;
+}
+.Search-bar {
+  width: 280px;
+  height: 35px;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-left: -40px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.bt1 {
+  background-color: rgb(87, 72, 73);
+  height: 35px;
+  width: 60px;
+  border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-left: -30px;
+  margin-top: 0px;
+  color: aliceblue;
+}
+.fa-solid {
+  font-size: 18px;
+}
+#LM {
+  margin-top: 35px;
+  margin-left: 100px;
+  font-size: 40px;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  border-bottom: solid white;
+  max-width: 165px;
+}
+.FT1 {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700px;
+  font-size: 40px;
+  margin-left: 450px;
+  margin-top: 200px;
+}
+#result {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 20px; /* Adjust the gap between movies */
+  width: 100%;
+  max-width: 1400px;
+  margin-left: 20px;
+  margin-bottom: 6rem;
+  justify-content: space-between;
+}
+
+.img {
+  width: 100%; /* Make the image container take 100% width of its parent */
+  overflow: hidden; /* Hide overflow to prevent distortion */
+}
+
+.img img {
+  width: 100%; /* Make the image take 100% width of its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.title {
+  size: 1000px;
+}
+a {
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}

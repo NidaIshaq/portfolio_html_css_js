@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Portfolio</title>
+  </head>
+  <body onload="searchMovieDefault()">
+    <nav id="header">
+      <p class="p1">
+        <span
+          ><span class="txt"><a href="#main"> About Us</a></span></span
+        >
+        <span
+          ><span class="txt"><a href="#result">Movies</a></span></span
+        >
+        <span
+          ><span class="txt"><a href="#main3">Contact Us</a></span></span
+        >
+      </p>
+    </nav>
+    <div class="main" id="main">
+      <p class="txt2">Hey I am Nida Fatima</p>
+
+      <p class="txt3">Internee Of Cohort 3</p>
+    </div>
+    <div class="main2">
+      <form class="form-container" action="">
+        <!-- Added id="movieTitle" to the input element -->
+        <input id="movieTitle" class="Search-bar" type="text" />
+        <button type="button" class="bt1" onclick="searchMovie()">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <br />
+      <!-- Added id="result" to the div element -->
+      <div id="result">
+        <a
+          href="https://www.imdb.com/title/tt26445483/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_fukre"
+          ><img
+            src="fukrey 3.png"
+            alt="Image File"
+            height="400px"
+            width="250px"
+        /></a>
+        <p>Fukrey 3</p>
+        <!-- Results will be displayed here -->
+      </div>
+      <div class="apicalling">
+        <script>
+          function searchMovieDefault() {
+            // Set a default movie title
+            const defaultTitle = "hate story";
+
+            // Call the searchMovie function with the default title
+            searchMovie(defaultTitle);
+          }
+
+          function searchMovie(title) {
+            // Use the provided API key
+            const apiKey = "ddc4f4d9";
+            const baseUrl = "http://www.omdbapi.com/";
+
+            // Get the user input
+            const titleInput = document.getElementById("movieTitle");
+
+            // If a title is not provided, use the user input
+            const searchTitle = title ? title : titleInput.value;
+
+            // Make a request to the OMDB API
+            fetch(`${baseUrl}?apikey=${apiKey}&s=${searchTitle}`)
+              .then((response) => response.json())
+              .then((data) => {
+                const resultDiv = document.getElementById("result");
+
+                if (data.Response === "True") {
+                  const movies = data.Search;
+                  resultDiv.innerHTML = "";
+
+                  movies.forEach((movie) => {
+                    resultDiv.innerHTML += `
+                    <div>
+                      <a class="img" href="http://www.imdb.com/title/${movie.imdbID}" target="_blank">
+                        <img src="${movie.Poster}" alt="${movie.Title}">
+                      </a>
+                      <h2 class="title">${movie.Title}</h2>
+                      <p>Year: ${movie.Year}</p>
+                    </div>`;
+                  });
+                } else {
+                  resultDiv.innerHTML = `<p>No results found.</p>`;
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching data:", error);
+              });
+          }
+        </script>
+      </div>
+    </div>
+    <div class="main3">
+      <a href="">
+        <section class=""></section>
+      </a>
+      <div class="FT1" id="main3"><h2>Let's work together...</h2></div>
+    </div>
+  </body>
+</html>
